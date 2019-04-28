@@ -11,7 +11,7 @@ let list = new Set();
 list.add("1");
 list.add("2");
 list.add("3");
-console.log(list);
+console.log(list);   
 let params = {};
 params.procodeList = list;
 console.log(params);  //{procodeList: {"1", "2", "3"}}
