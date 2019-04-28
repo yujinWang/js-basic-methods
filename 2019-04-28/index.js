@@ -15,3 +15,5 @@ console.log(list);
 let params = {};
 params.procodeList = list;
 console.log(params);  //{procodeList: {"1", "2", "3"}}
+
+//ssh测试
