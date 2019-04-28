@@ -17,3 +17,10 @@ params.procodeList = list;
 console.log(params);  //{procodeList: {"1", "2", "3"}}
 
 //ssh测试 3 3 5
+
+//关于git提交代码的一点知识，之前创建github地址之后使用的clone地址是http方式，
+//由于每次提交都需要进行输入 用户名和密码，于是想修改为ssh方式，经检查c盘中
+//已经存在这样一个文件了，但还是将其删除重新生成了一次，之后反复尝试都是需要输入用户名和
+//密码，于是又查阅资料得知是需要改变远程remote的url地址为ssh的(之前的是http的地址)
+//所需命令为git remote rm origin  -- 重置远程remote地址
+//git remote add origin github-ssh地址  --将远程地址修改为ssh地址即可
