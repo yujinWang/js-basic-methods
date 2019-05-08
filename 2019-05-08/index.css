@@ -1,0 +1,124 @@
+* {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 600px;
+            margin: 50px auto;
+            position: relative;
+            font-size: 0;
+            overflow: hidden;
+        }
+
+        .container > .top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #FFF;
+            width: 600px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .container > .bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 600px;
+            height: 50px;
+            line-height: 50px;
+            color: #FFF;
+            font-size: 14px;
+            background: #000;
+            opacity: 0.8;
+        }
+
+        .container > .bottom > .progress {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            width: 480px;
+            height: 6px;
+            border-radius: 3px;
+            background: #666;
+            cursor: pointer;
+        }
+
+        .container > .bottom > .progress > .current {
+            position: absolute;
+            height: 6px;
+            border-radius: 3px;
+            background: orange;
+        }
+
+        .container > .bottom > .time {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            color: #FFF;
+            font-size: 14px;
+            line-height: 6px;
+        }
+
+        .container > .bottom > span {
+            display: block;
+            width: 44px;
+            height: 44px;
+            /*background: #CCC;*/
+            margin-top: 6px;
+            text-align: center;
+            line-height: 44px;
+            cursor: pointer;
+        }
+
+        .container > .bottom > .left {
+            float: left;
+        }
+
+        .container > .bottom > .right {
+            float: right;
+        }
+
+        .container > .bottom > .play {
+            background: url("http://wx4.sinaimg.cn/mw690/006jnDrily1fgu47lets1j305k05ka9v.jpg") no-repeat center/40%;
+						/* background: url("https://github.com/yujinWang/vue-router-tips/blob/master/src/assets/qiehuan.png") */
+					}
+
+        .container > .bottom > .pause {
+            background: url("http://wx3.sinaimg.cn/mw690/006jnDrily1fgu49adrkjj305k05k0si.jpg") no-repeat center/40%;
+        }
+
+        .container > .bottom > .stop {
+            background: url("http://wx2.sinaimg.cn/mw690/006jnDrily1fgu49bdtipj305k05kdfm.jpg") no-repeat center/40%;
+        }
+
+        .container > .bottom > .rate3 {
+            opacity: 0.4;
+        }
+
+        .container > .bottom > .sound {
+            background: url("http://wx2.sinaimg.cn/mw690/006jnDrily1fgu49ayq14j305k05kweb.jpg") no-repeat center/50%;
+        }
+
+        .container > .bottom > .mute {
+            background: url("http://wx2.sinaimg.cn/mw690/006jnDrily1fgu49a2533j305k05kdfn.jpg") no-repeat center/50%;
+        }
+
+        .container > .bottom > .volume {
+            width: 60px;
+            height: 6px;
+            margin-top: 25px;
+            margin-right: 25px;
+            background: #666;
+            border-radius: 3px;
+        } 
+
+        .container > .bottom > .volume > .currentVolume {
+            display: block;
+            height: 6px;
+            background: orange;
+            border-radius: 3px;
+        }

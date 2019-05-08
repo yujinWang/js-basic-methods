@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="./index.css">
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="./index.js"></script>   <!--js中需要添加$(document).ready()或者写在body后面引用否则js不会加载-->
+</head>
+
+<body>
+	<div class="container">
+		<video width="600px">
+			<source src="http://video.mukewang.com/mk.mp4" type="video/mp4">
+			您的浏览器不支持
+		</video>
+		<div class="top"> <!-- 顶部 -->
+			自定义播放器
+		</div>
+		<div class="bottom"> <!-- 底部 -->
+			<div class="progress"> <!-- 进度条外边框 -->
+				<div class="current"></div> <!-- 进度条当前进度 -->
+			</div>
+			<div class="time"> <!-- 时间 -->
+				<span>00:00</span> <!-- 当前时间 -->
+				<span>/</span>
+				<span>00:00</span> <!-- 总时间 -->
+			</div>
+			<!-- 控制面板 -->
+			<span class="left play" id="play"></span> <!-- 播放暂停 -->
+			<span class="left stop" id="stop"></span> <!-- 回到开始 -->
+			<span class="left rate1" id="rate1">X1</span> <!-- 正常速度 -->
+			<span class="left rate3" id="rate3">X3</span> <!-- 3倍播放速度 -->
+			<span class="right volume"> <!--  -->
+				<span class="currentVolume"></span> <!-- 静音或打开声音 -->
+			</span>
+			<span class="right sound" id="sound"></span> <!-- 拖动改变音量 -->
+		</div>
+	</div>
+</body>
+
+</html>
