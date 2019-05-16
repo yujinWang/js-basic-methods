@@ -1,0 +1,40 @@
+ /* 动画闪烁颜色  */
+ /* 关键字用到了keyframes属性，from和to分别指0%和100%，为获得最佳浏览器支持需要 */
+ /* 需始终定义from和to，中间可以添加不同的过渡值 */
+ /* 在不同的值里面都可以定义不同的样式 */
+@-webkit-keyframes greenPulse {
+	from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+	50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
+	to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+}
+
+@-webkit-keyframes bluePulse {
+	from { background-color: #007d9a; -webkit-box-shadow: 0 0 9px #333; }
+	50% { background-color: #2daebf; -webkit-box-shadow: 0 0 18px #2daebf; }
+	to { background-color: #007d9a; -webkit-box-shadow: 0 0 9px #333; }
+}
+
+
+@-webkit-keyframes magentaPulse {
+	from { background-color: #630030; -webkit-box-shadow: 0 0 9px #333; }
+	50% { background-color: #a9014b; -webkit-box-shadow: 0 0 18px #a9014b; }
+	to { background-color: #630030; -webkit-box-shadow: 0 0 9px #333; }
+}
+
+
+/*  重复动画，不添加此属性，动画只执行一次 animation-iteration-count动画播放次数 */
+/* 接受数字类型的参数，表示播放几次，infinite表示播放无数次 */
+a.button{-webkit-animation-iteration-count: infinite;}
+
+/*  动画名称、动画完成时间  */
+.greenPulse.button{-webkit-animation-name:greenPulse;-webkit-animation-duration: 3s;}
+.bluePulse.button{-webkit-animation-name:bluePulse;-webkit-animation-duration:3s;}
+.magentaPulse.button{-webkit-animation-name:magentaPulse;-webkit-animation-duration:3s;}
+
+#audioactiveButtonspage a {
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 5px;
+	font-size: 30px;
+}
