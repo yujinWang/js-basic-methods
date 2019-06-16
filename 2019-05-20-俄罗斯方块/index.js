@@ -126,7 +126,7 @@ var setInter = setInterval(function() {
     // clearPre(param);
     // param++;
     fall();
-  }, 500)
+  }, 200)
   //继续-如何清除下落过程中上一次生成的方块？该从哪个角度入手？
   //答案是参考生成方块函数，它创造了一个方块，那么我们在它里面删除那个之前的
 function clearPre(y) {
@@ -151,8 +151,29 @@ function fall() {
     param = 0;
     moldArr = mold();
   }
-  update(param);
+  //调用下面碰撞检测函数，当撞上之后再生成方块更新什么的
+  // if(collideTest()) {
+  //   param = 0;
+  //   moldArr = mold();
+  // }
   clearPre(param);
+  update(param);
   param++;
 }
 //下一步，当新生成的方块碰到下面的方块的时候就需要停下来
+//可以借鉴检测方块到底部之后的方法-返回true/false
+function collideTest() {
+  //条件1-当到达底部的时候
+  if(param + moldArr.length >= data.length + 1) {
+    return true;
+  }
+  //条件2-当上面的方块碰到下面的方块的时候-当从数据中检测到下面的有1的时候
+  // for(var i = 0; i < moldArr.length; i++) {
+  //   for(var j = 0; j < moldArr[i].length; j++) {
+  //     if(data[i + param][j + 4] === 1) {
+  //       return true;
+  //     }
+  //   }
+  // }
+  return false;
+}
