@@ -4,6 +4,9 @@
     <h2>Essential Links</h2>
 		<!-- <Father></Father> -->
 		<!-- <Father1></Father1> -->
+		<button>
+			<router-link to="/data">vue中的数据传递测试页面</router-link>
+		</button>
 		<Father2></Father2>
   </div>
 </template>
