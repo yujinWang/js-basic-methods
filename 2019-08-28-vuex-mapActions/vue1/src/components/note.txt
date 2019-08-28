@@ -1,0 +1,56 @@
+vuex使用场景，正常的组件之间的通信有子父组件传值，使用ref，使用parent等，
+当这个值的传递与使用场景比较复杂的时候，就需要使用vuex来管理这些数据。
+1、安装vuex，npm install vuex --save;
+2、在src目录下创建vuex文件夹，并在里面创建store.js文件，并在此文件中引入vuex，并定义数据及导出
+   import Vue from "vue";
+	 import Vuex from "vuex";
+	 Vue.use(Vuex);
+	 const state = { 
+		 count: 100
+	 }
+	 export default new Vuex.store({
+		 state
+	 })
+3、在main.js中引入上面创建的store.js文件，并在new Vue中实例化它
+   import storm from "./vuex/store"
+4、然后在其他的组件中就可以使用{{$store.state.count}}访问到定义的数据了
+5、如何对定义的数据进行操作呢，回到store.js文件中，使用mutations和actions实现数据的改变
+   其中mutations里面是用来定义方法的，方法里面的参数，第一个是state，剩余由用户自定义
+6、我们在mutations中定义两个方法，一个增加数字，一个减小数字，之后将mutations导出
+   const mutations = {
+		 addCount(state,n=0){
+			 return state.count += 1;
+		 },
+		 reduceCount(state,n=0){
+			 return state.count -= 1;
+		 }
+	 }
+7、回到调用那个数字的组件中，定义两个方法，分别为addNum和reduceNum，并在按钮中绑定这两个事件
+   方法中是通过commit来触发上面定义的事件的，在按钮上绑定点击事件时候需要传入改变参数的值，
+	 若调用时候未传入参数，那么将使用初始定义的值，传入参数则使用现有值。
+   addNum(n){
+		 this.$store.commit("addCount",n);
+	 }
+	 reduceNum(n){
+		 this.$store.commit("reduceCount",n);
+	 }
+8、之后是actions对象，它是属于异步操作对象，它通过执行mutations中定义的方法来实现异步操作
+   具体的使用方法是分为两种写法
+	 i:直接使用对象的commit方法
+	 actionReduceCount({ commit },n=1){
+		 return commit("reduceCount1",n)
+	 }
+	 ii:使用context，它是和store对象具有相同的对象属性的参数
+	 actionAddCount(context,n=1){
+		 console.log(context);
+		 return context.commit("addCount1", n);
+	 },
+	 关于在actions中可以使用异步，mutations中不能使用异步的一点现象
+	 在尝试一个简单的数值累加减减操作时候，并没有看出它们的区别，结果是两个都可以执行异步操作
+9、getters，我们一般使用getters来获取state，它相当于是state的一个计算属性
+   直接使用的方式例如 <h1>{{$store.getters.count}}</h1>
+10、上面的步骤是基本的使用方式，为了更加方便的使用这些东西，vuex官方给出了如下函数
+    mapState,mapMutations,mapActions,mapGetters辅助函数，使用es6中的扩展运算符
+		在使用之前记得引入一下 import { mapMutations, mapActions } from "vuex";
+
+   
