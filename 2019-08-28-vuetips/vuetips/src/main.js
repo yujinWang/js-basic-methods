@@ -13,7 +13,40 @@ import 'element-ui/lib/theme-chalk/index.css';
 // 引入vue-router并挂载到new Vue实例上
 import Router from "./router/router.js";
 
+// 国际化vue-i18n并挂载到Vue实例上
+import VueI18n from "vue-i18n";
+
+// const messages = {
+// 	zh: {
+// 		message: {
+// 			hello: "你好"
+// 		}
+// 	},
+// 	en: {
+// 		message: {
+// 			hello: "hello"
+// 		}
+// 	}
+// }
+// window.Vue = Vue;
 Vue.use(ElementUi);
+Vue.use(VueI18n);
+const i18n = new VueI18n({
+	locale: "en",
+	messages: {
+		zh: {
+			message: {
+				hello: "你好"
+			}
+		},
+		en: {
+			message: {
+				hello: "hello"
+			}
+		}
+	}
+})
+
 
 Vue.config.productionTip = false
 
@@ -22,5 +55,6 @@ Vue.config.productionTip = false
 // 报的错误是Error in render: "TypeError: Cannot read property 'matched' of undefined"
 new Vue({
 	router:Router,
-	render: h => h(App)
+	render: h => h(App),
+	i18n,
 }).$mount('#app')

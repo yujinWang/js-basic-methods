@@ -6,13 +6,14 @@
 			<!-- <router-link to="/DataChange">DataChange</router-link>
 			<router-link to="/ElementUi">ElementUi</router-link>
 			<router-link to="/Vuexs">Vuexs</router-link> -->
+			<!-- 左侧导航菜单 -->
 			<div class="menu">
 				<el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
 					:collapse="isCollapse">
 					<el-submenu index="1">
 						<template slot="title">
 							<i class="el-icon-location"></i>
-							<span slot="title">ElementUi相关</span>
+							<span slot="title">ElementUi</span>
 						</template>
 						<el-menu-item-group>
 							<el-menu-item index="1-1" @click="goto('/ElementUi')">选项1</el-menu-item>
@@ -20,21 +21,30 @@
 						</el-menu-item-group>
 							<el-menu-item index="1-3">选项3</el-menu-item>
 						</el-menu-item-group>
-						<el-submenu index="1-4">
-							<span slot="title">选项4</span>
-							<el-menu-item index="1-4-1">选项1</el-menu-item>
-						</el-submenu>
 					</el-submenu>
 					<el-menu-item index="2" @click="goto('/DataChange')">
 						<i class="el-icon-menu"></i>
 						<span slot="title">组件传值</span>
 					</el-menu-item>
-					<el-menu-item index="4" @click="goto('Vuexs')">
+					<el-menu-item index="4" @click="goto('/Vuexs')">
 						<i class="el-icon-setting"></i>
 						<span slot="title">vuex相关</span>
 					</el-menu-item>
+					<el-submenu index="6">
+						<template slot="title">
+							<i class="el-icon-edit"></i>
+							<span slot="title">知识记录</span>
+						</template>
+						<el-menu-item-group>
+							<el-menu-item index="6-1" @click="goto('/Notes1')">页面设计</el-menu-item>
+							<el-menu-item index="6-2" @click="goto('/Notes2')">VueRouter</el-menu-item>
+						</el-menu-item-group>
+						<el-menu-item index="6-3" @click="goto('/Notes3')">vue-i18n</el-menu-item>
+						</el-menu-item-group>
+					</el-submenu>
 				</el-menu>
 			</div>
+			<!-- 右侧页面内容 -->
 			<div class="section">
 				<router-view />
 			</div>
@@ -47,6 +57,9 @@
 	import DataChange from "../DataChange/DataChange";
 	import ElementUi from "../ElementUi/ElementUi";
 	import Vuexs from "../Vuex/Vuex";
+	import Notes1 from "../Note/Note";
+	import Notes2 from "../Note/Note2";
+	import Notes3 from "../Note/Note3";
 	export default {
 		name: 'layout',
 		data(){
@@ -55,7 +68,7 @@
 			}
 		},
 		components: {
-			NavBar, DataChange, ElementUi, Vuexs
+			NavBar, DataChange, ElementUi, Vuexs, Notes1, Notes2, Notes3
 		},
 		methods: {
 			handleOpen(key, keyPath) {
