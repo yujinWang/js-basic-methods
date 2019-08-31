@@ -9,6 +9,7 @@ module.exports = {
 		element: "饿了么",
 		componentValue: "组件传值",
 		vuexs: "Vuex 相关",
-		noteRecord: "笔记整理"
+		noteRecord: "笔记整理",
+		slot: "插槽测试"
 	}
 }

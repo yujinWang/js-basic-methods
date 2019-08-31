@@ -9,6 +9,7 @@ module.exports = {
 		element: "ElementUi",
 		componentValue: "ComponentsByValue",
 		vuexs: "Vuex About",
-		noteRecord: "Note Record"
+		noteRecord: "Note Record",
+		slot: "Slot Test"
 	}
 }

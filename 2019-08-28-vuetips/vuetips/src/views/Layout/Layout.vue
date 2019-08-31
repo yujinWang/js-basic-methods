@@ -42,6 +42,10 @@
 						<el-menu-item index="6-3" @click="goto('/Notes3')">vue-i18n</el-menu-item>
 						</el-menu-item-group>
 					</el-submenu>
+					<el-menu-item index="2" @click="goto('/Slot')">
+						<i class="el-icon-menu"></i>
+						<span slot="title">{{$t("menus.slot")}}</span>
+					</el-menu-item>
 				</el-menu>
 			</div>
 			<!-- 右侧页面内容 -->
@@ -60,6 +64,7 @@
 	import Notes1 from "../Note/Note";
 	import Notes2 from "../Note/Note2";
 	import Notes3 from "../Note/Note3";
+	import Slot from "../Slot/SlotTest";
 	export default {
 		name: 'layout',
 		data(){
@@ -68,7 +73,7 @@
 			}
 		},
 		components: {
-			NavBar, DataChange, ElementUi, Vuexs, Notes1, Notes2, Notes3
+			NavBar, DataChange, ElementUi, Vuexs, Notes1, Notes2, Notes3, Slot
 		},
 		methods: {
 			handleOpen(key, keyPath) {
