@@ -13,7 +13,7 @@
 					<el-submenu index="1">
 						<template slot="title">
 							<i class="el-icon-location"></i>
-							<span slot="title">ElementUi</span>
+							<span slot="title">{{$t("menus.element")}}</span>
 						</template>
 						<el-menu-item-group>
 							<el-menu-item index="1-1" @click="goto('/ElementUi')">选项1</el-menu-item>
@@ -24,16 +24,16 @@
 					</el-submenu>
 					<el-menu-item index="2" @click="goto('/DataChange')">
 						<i class="el-icon-menu"></i>
-						<span slot="title">组件传值</span>
+						<span slot="title">{{$t("menus.componentValue")}}</span>
 					</el-menu-item>
 					<el-menu-item index="4" @click="goto('/Vuexs')">
 						<i class="el-icon-setting"></i>
-						<span slot="title">vuex相关</span>
+						<span slot="title">{{$t("menus.vuexs")}}</span>
 					</el-menu-item>
 					<el-submenu index="6">
 						<template slot="title">
 							<i class="el-icon-edit"></i>
-							<span slot="title">知识记录</span>
+							<span slot="title">{{$t("menus.noteRecord")}}</span>
 						</template>
 						<el-menu-item-group>
 							<el-menu-item index="6-1" @click="goto('/Notes1')">页面设计</el-menu-item>
