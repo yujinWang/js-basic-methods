@@ -1,6 +1,6 @@
 <template>
 	<div class="header">
-		<h2>NavBar页面，页面头部导航条</h2>
+		<h2>{{$t("navbar.navbar")}}</h2>
 		<div class="language">
 			<template>
 				<el-select v-model="value" placeholder="请选择" @change="changeLanguage()">

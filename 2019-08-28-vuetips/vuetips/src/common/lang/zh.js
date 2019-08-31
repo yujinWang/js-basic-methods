@@ -2,7 +2,8 @@ module.exports = {
 	navbar: {
 		home: '首页',
 		introduction: '简介',
-		contact: '联系我们'
+		contact: '联系我们',
+		navbar: '导航条'
 	},
 	menus: {
 		element: "饿了么",
