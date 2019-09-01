@@ -39,8 +39,9 @@
 							<el-menu-item index="6-1" @click="goto('/Notes1')">页面设计</el-menu-item>
 							<el-menu-item index="6-2" @click="goto('/Notes2')">VueRouter</el-menu-item>
 						</el-menu-item-group>
-						<el-menu-item index="6-3" @click="goto('/Notes3')">vue-i18n</el-menu-item>
+							<el-menu-item index="6-3" @click="goto('/Notes3')">vue-i18n</el-menu-item>
 						</el-menu-item-group>
+						<el-menu-item index="7-1" @click="goto('/VuexTest')">Vuex步骤</el-menu-item>
 					</el-submenu>
 					<el-menu-item index="2" @click="goto('/Slot')">
 						<i class="el-icon-menu"></i>
@@ -65,6 +66,7 @@
 	import Notes2 from "../Note/Note2";
 	import Notes3 from "../Note/Note3";
 	import Slot from "../Slot/SlotTest";
+	import VuexTest from "../Note/Note4";
 	export default {
 		name: 'layout',
 		data(){
@@ -73,7 +75,7 @@
 			}
 		},
 		components: {
-			NavBar, DataChange, ElementUi, Vuexs, Notes1, Notes2, Notes3, Slot
+			NavBar, DataChange, ElementUi, Vuexs, Notes1, Notes2, Notes3, Slot, VuexTest
 		},
 		methods: {
 			handleOpen(key, keyPath) {

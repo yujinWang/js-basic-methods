@@ -21,6 +21,7 @@ const Notes1 = () => import("../views/Note/Note.vue");
 const Notes2 = () => import("../views/Note/Note2.vue");
 const Notes3 = () => import("../views/Note/Note3.vue");
 const SlotTest = () => import("../views/Slot/SlotTest.vue");
+const VuexTest = () => import("../views/Note/Note4.vue");
 
 // 导出router对象
 export default new VueRouter({
@@ -59,6 +60,10 @@ export default new VueRouter({
 				{
 					path: "/Slot",
 					component: SlotTest
+				},
+				{
+					path: "/VuexTest",
+					component: VuexTest
 				}
 			]
 		}
