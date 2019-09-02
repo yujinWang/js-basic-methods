@@ -29,15 +29,27 @@ const mutations = {
 const actions = {
 	actionAddCount(context,n=0) {
 		console.log(context);
-		return context.commit("mutationAddCount1",n);
+		setTimeout(()=>{
+			return context.commit("mutationAddCount1", n);
+		},2000)
 	},
 	actionReduceCount({commit},n=0) {
-		return commit("mutationReduceCount1",n);
+		setTimeout(()=>{
+			return commit("mutationReduceCount1", n);
+		},1000)
+	}
+}
+
+// getters，我们一般使用getters来获取我们的state，因为它算是state的一个计算属性
+const getters = {
+	getterCount(state,n=0) {
+		return (state.count += n);
 	}
 }
 
 export default new Vuex.Store({
 	state,
 	mutations,
-	actions
+	actions,
+	getters
 })

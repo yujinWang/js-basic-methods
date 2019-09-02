@@ -5,8 +5,10 @@
 		<h2 style="color: red;">{{$store.state.count2}}</h2>
 		<button @click="addCountMutation(10)">mutations增加10</button>
 		<button @click="reduceCountMutation(5)">mutations减少5</button> <br />
-		<button @click="addCountAction(1)">actions增加1</button>
-		<button @click="reduceCountAction(1)">actions减少1</button>
+		<button @click="addCountAction(1)">actions增加1,延迟2秒</button>
+		<button @click="reduceCountAction(1)">actions减少1，延迟1秒</button>
+		<p>对于这个简单的例子而言，在mutations中添加setTimeout也是可以执行异步操作的</p>
+		<p>但是对于某些复杂场景来说就不适用了</p>
 	</div>
 </template>
 
