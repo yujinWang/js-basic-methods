@@ -1,15 +1,113 @@
 <template>
-	<div>
-		<h2>ElementUi页面，用来测试element中的一些封装等操作</h2>
+	<div class="table_test">
+		<div class="info">
+			<p>遇到的一个问题，引入element表格之后表头和下面单元格错位，但测试在火狐62版本中是正常的</p>
+			<p>解决方式是在App.vue文件中添加如下样式body .el-table th.gutter{display: table-cell!important;}</p>
+			<p>表头的中英文，将绑定的columnsData放在computed计算属性中，即可使用this.$t("test.name")的方式实现</p>
+		</div>
+		<Tables
+			:dataSource="dataSource"
+			:columns="columnsData"
+		>
+		</Tables>
 	</div>
 </template>
 
 <script>
+	import Tables from "../../common/table/Table";
 	export default {
-		name: 'ElementUi'
+		name: 'ElementUi',
+		data() {
+			return {
+				dataSource: [{
+					createTime: "2018-08-08",
+					phone: "123456",
+					username: "Jhon",
+					deptName: "部门1",
+					status: "在职"
+				}, {
+						createTime: "2019-08-08",
+						phone: "12345678",
+						username: "Jimi",
+						deptName: "部门2",
+						status: "离职"
+					}, {
+						createTime: "2020-08-08",
+						phone: "345678",
+						username: "Tom",
+						deptName: "部门3",
+						status: "离职"
+					}, {
+						createTime: "2021-08-08",
+						phone: "456789",
+						username: "Jike",
+						deptName: "部门4",
+						status: "在职"
+					}],
+				// dataSource: [],
+			}
+		},
+		components: {
+			Tables
+		},
+		computed: {
+			tableHead() {
+				return this.$t("element");
+			},
+			columnsData() {
+				return [{
+					hasSort: false, //<Boolean> 是否排序
+					isShow: true, //<Boolean> 是否展示
+					prop: 'createTime', //<String>  对应属性名
+					label: this.tableHead.datas, //<String>   表头标签
+					align: 'center',
+					width: 150 // 列宽
+				},
+				{
+					hasSort: false, //<Boolean> 是否排序
+					isShow: true, //<Boolean> 是否展示
+					prop: 'phone', //<String>  对应属性名
+					label: this.tableHead.phoneNum, //<String>   表头标签
+					align: 'center',
+					width: 150 // 列宽
+				},
+				{
+					hasSort: false, //<Boolean> 是否排序
+					isShow: true, //<Boolean> 是否展示
+					prop: 'username', //<String>  对应属性名
+					label: this.tableHead.name, //<String>   表头标签
+					align: 'center',
+					width: 150 // 列宽
+				},
+				{
+					hasSort: false, //<Boolean> 是否排序
+					isShow: true, //<Boolean> 是否展示
+					prop: 'deptName', //<String>  对应属性名
+					label: this.tableHead.department, //<String>   表头标签
+					align: 'center',
+					width: 150 // 列宽
+				},
+				{
+					hasSort: false, //<Boolean> 是否排序
+					isShow: true, //<Boolean> 是否展示
+					prop: 'status', //<String>  对应属性名
+					label: this.tableHead.status, //<String>   表头标签
+					align: 'center',
+					width: 150 // 列宽
+				}]
+			} 
+		},
+		methods: {
+			
+		}
 	}
 </script>
 
 <style scoped>
-
+	.table_test {
+		margin: 10px;
+	}
+	.info {
+		margin-bottom: 20px;
+	}
 </style>

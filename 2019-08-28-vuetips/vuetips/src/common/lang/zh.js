@@ -11,5 +11,13 @@ module.exports = {
 		vuexs: "Vuex 相关",
 		noteRecord: "笔记整理",
 		slot: "插槽测试"
+	},
+	element: {
+		noData: "暂无数据",
+		datas: "日期",
+		phoneNum: "电话",
+		name: "姓名",
+		department: "部门",
+		status: "状态"
 	}
 }

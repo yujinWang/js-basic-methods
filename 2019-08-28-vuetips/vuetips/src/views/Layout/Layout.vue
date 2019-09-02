@@ -16,7 +16,7 @@
 							<span slot="title">{{$t("menus.element")}}</span>
 						</template>
 						<el-menu-item-group>
-							<el-menu-item index="1-1" @click="goto('/ElementUi')">选项1</el-menu-item>
+							<el-menu-item index="1-1" @click="goto('/ElementUi')">表格测试</el-menu-item>
 							<el-menu-item index="1-2">选项2</el-menu-item>
 						</el-menu-item-group>
 							<el-menu-item index="1-3">选项3</el-menu-item>
