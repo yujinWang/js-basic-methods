@@ -18,6 +18,7 @@ module.exports = {
 		phoneNum: "PhoneNo",
 		name: "Name",
 		department: "DepartMent",
-		status: "Status"
+		status: "Status",
+		operator: "Operator"
 	}
 }

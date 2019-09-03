@@ -18,6 +18,7 @@ module.exports = {
 		phoneNum: "电话",
 		name: "姓名",
 		department: "部门",
-		status: "状态"
+		status: "状态",
+		operator: "操作"
 	}
 }

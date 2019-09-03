@@ -98,7 +98,12 @@
 			} 
 		},
 		methods: {
-			
+			handleEdit(index,row) {
+				console.log(arguments);
+			},
+			handleDelete(index,row) {
+				console.log(arguments);
+			}
 		}
 	}
 </script>

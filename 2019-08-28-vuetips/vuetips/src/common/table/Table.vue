@@ -1,28 +1,41 @@
 <template>
-	<el-table 
-		:stripe="stripe"
-		:border="border" 
-		:data="dataSource"
-		:show-header="showHeader"
-		:empty-text="emptyText"
-		>
-		<!--数据源-->
-		<el-table-column 
-			type="selection" 
-			width="55">
-		</el-table-column>
-		<el-table-column
-			v-for="(column, index) in columns" 
-			v-if="column.isShow" 
-			header-align="center"
-			:sortable="column.hasSort" 
-			:key="column.prop" 
-			:prop="column.prop" 
-			:label="column.label" 
-			:align="column.align"
-			:width="column.width">
-		</el-table-column>
-	</el-table>
+	<div>
+		<el-table 
+			:stripe="stripe"
+			:border="border" 
+			:data="dataSource"
+			:show-header="showHeader"
+			:empty-text="emptyText"
+			>
+			<!--数据源-->
+			<el-table-column 
+				type="selection" 
+				width="55">
+			</el-table-column>
+			<el-table-column
+				v-for="(column, index) in columns" 
+				v-if="column.isShow" 
+				header-align="center"
+				:sortable="column.hasSort" 
+				:key="column.prop" 
+				:prop="column.prop" 
+				:label="column.label" 
+				:align="column.align"
+				:width="column.width"
+			>
+			</el-table-column>
+			<el-table-column 
+				label="操作" 
+				header-align="center"
+				width="150"
+			>
+				<template slot-scope="scope">
+					<el-button size="mini" @click="handleEdit(scope.$index, scope.row)">索引</el-button>
+					<el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+				</template>
+			</el-table-column>
+		</el-table>
+	</div>
 </template>
 <script>
 	export default {
@@ -54,9 +67,17 @@
 			}
 		},
 		methods: {
-			clickTable(row) {
-				console.log(row);
+			handleEdit(index,row) {
+				alert(index);
+				console.log(index,row);
+			},
+			handleDelete(index,row) {
+				alert(index);
+				console.log(index,row);
 			}
 		}
 	}
 </script>
+<style scoped>
+	
+</style>
