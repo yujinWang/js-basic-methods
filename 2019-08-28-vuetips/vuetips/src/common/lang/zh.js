@@ -10,7 +10,7 @@ module.exports = {
 		componentValue: "组件传值",
 		vuexs: "Vuex 相关",
 		noteRecord: "笔记整理",
-		slot: "插槽测试"
+		slotTest: "插槽测试"
 	},
 	element: {
 		noData: "暂无数据",

@@ -58,7 +58,7 @@ export default new VueRouter({
 					component: Notes3
 				},
 				{
-					path: "/Slot",
+					path: "/Slots",
 					component: SlotTest
 				},
 				{

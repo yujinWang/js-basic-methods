@@ -19,6 +19,7 @@
 							<el-menu-item index="1-1" @click="goto('/ElementUi')">表格测试</el-menu-item>
 							<el-menu-item index="1-2">选项2</el-menu-item>
 						</el-menu-item-group>
+						<el-menu-item-group>
 							<el-menu-item index="1-3">选项3</el-menu-item>
 						</el-menu-item-group>
 					</el-submenu>
@@ -40,12 +41,13 @@
 							<el-menu-item index="6-2" @click="goto('/Notes2')">VueRouter</el-menu-item>
 						</el-menu-item-group>
 							<el-menu-item index="6-3" @click="goto('/Notes3')">vue-i18n</el-menu-item>
+						<el-menu-item-group>
+							<el-menu-item index="7-1" @click="goto('/VuexTest')">Vuex步骤</el-menu-item>
 						</el-menu-item-group>
-						<el-menu-item index="7-1" @click="goto('/VuexTest')">Vuex步骤</el-menu-item>
 					</el-submenu>
-					<el-menu-item index="2" @click="goto('/Slot')">
+					<el-menu-item index="2" @click="goto('/Slots')">
 						<i class="el-icon-menu"></i>
-						<span slot="title">{{$t("menus.slot")}}</span>
+						<span slot="title">{{$t("menus.slotTest")}}</span>
 					</el-menu-item>
 				</el-menu>
 			</div>
@@ -58,24 +60,12 @@
 </template>
 
 <script>
-	import NavBar from "../NavBar/NavBar";
-	import DataChange from "../DataChange/DataChange";
-	import ElementUi from "../ElementUi/ElementUi";
-	import Vuexs from "../Vuex/Vuex";
-	import Notes1 from "../Note/Note";
-	import Notes2 from "../Note/Note2";
-	import Notes3 from "../Note/Note3";
-	import Slot from "../Slot/SlotTest";
-	import VuexTest from "../Note/Note4";
 	export default {
 		name: 'layout',
 		data(){
 			return {
 				isCollapse: false
 			}
-		},
-		components: {
-			NavBar, DataChange, ElementUi, Vuexs, Notes1, Notes2, Notes3, Slot, VuexTest
 		},
 		methods: {
 			handleOpen(key, keyPath) {

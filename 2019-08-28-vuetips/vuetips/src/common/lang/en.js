@@ -10,7 +10,7 @@ module.exports = {
 		componentValue: "ComponentsByValue",
 		vuexs: "Vuex About",
 		noteRecord: "Note Record",
-		slot: "Slot Test"
+		slotTest: "Slot Test"
 	},
 	element: {
 		noData: "NoData",
