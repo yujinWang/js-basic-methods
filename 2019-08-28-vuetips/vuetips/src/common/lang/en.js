@@ -19,6 +19,8 @@ module.exports = {
 		name: "Name",
 		department: "DepartMent",
 		status: "Status",
-		operator: "Operator"
+		operator: "Operator",
+		indexBtn: "IndexBtn",
+		deleteBtn: "Delete"
 	}
 }

@@ -19,6 +19,8 @@ module.exports = {
 		name: "姓名",
 		department: "部门",
 		status: "状态",
-		operator: "操作"
+		operator: "操作",
+		indexBtn: "索引",
+		deleteBtn: "删除"
 	}
 }

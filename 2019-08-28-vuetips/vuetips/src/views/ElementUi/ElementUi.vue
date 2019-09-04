@@ -4,6 +4,7 @@
 			<p>遇到的一个问题，引入element表格之后表头和下面单元格错位，但测试在火狐62版本中是正常的</p>
 			<p>解决方式是在App.vue文件中添加如下样式body .el-table th.gutter{display: table-cell!important;}</p>
 			<p>表头的中英文，将绑定的columnsData放在computed计算属性中，即可使用this.$t("test.name")的方式实现</p>
+			<p>若要表格内容中英文展示，将绑定的dataSource从data中放到computed中即可</p>
 		</div>
 		<Tables
 			:dataSource="dataSource"
