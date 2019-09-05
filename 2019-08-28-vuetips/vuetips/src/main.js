@@ -19,6 +19,17 @@ import store from "./store/store"
 // 国际化vue-i18n并挂载到Vue实例上
 import VueI18n from "vue-i18n";
 
+// 引入axios
+import axios from "axios";
+import QS from 'qs'
+Vue.prototype.qs = QS;
+Vue.prototype.$http = axios;  //引入完成之后不可直接使用，需要改写原型链
+
+// 引入mock
+require("./mock/mock.js");
+// import "./mock/mock";
+
+
 // window.Vue = Vue;
 Vue.use(ElementUi);
 Vue.use(VueI18n);
