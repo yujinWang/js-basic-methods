@@ -21,6 +21,7 @@ module.exports = {
 		status: "状态",
 		operator: "操作",
 		indexBtn: "索引",
-		deleteBtn: "删除"
+		deleteBtn: "删除",
+		addBtn: "增加"
 	}
 }

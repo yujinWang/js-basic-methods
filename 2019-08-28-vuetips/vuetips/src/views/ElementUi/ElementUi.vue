@@ -10,6 +10,7 @@
 		<Tables
 			:dataSource="dataSource"
 			:columns="columnsData"
+			ref="table"
 		>
 		</Tables>
 	</div>
@@ -56,7 +57,7 @@
 		},
 		mounted() {
 			this.getMockData();
-			this.getMockData1();
+			this.getMockData1(); 
 		},
 		computed: {
 			tableHead() {
@@ -120,10 +121,8 @@
 			},
 			getMockData1() {
 				https.fetchGet("/user").then(res=>{
-					console.log(res); //dataSource
+					// console.log(res); //dataSource
 					this.dataSource = getDataTest(res.data.data);
-					// getDataTest(res.data.data);
-					// getDataTest(test1);
 				})
 			}
 		}

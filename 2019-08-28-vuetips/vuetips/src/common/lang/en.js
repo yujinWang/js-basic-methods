@@ -21,6 +21,7 @@ module.exports = {
 		status: "Status",
 		operator: "Operator",
 		indexBtn: "IndexBtn",
-		deleteBtn: "Delete"
+		deleteBtn: "Delete",
+		addBtn: "Add"
 	}
 }

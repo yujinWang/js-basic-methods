@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<el-table 
+		<el-table
 			:stripe="stripe"
 			:border="border" 
 			:data="dataSource"
@@ -28,12 +28,13 @@
 			<el-table-column 
 				:label="labels" 
 				header-align="center"
-				width="180"
+				width="260"
 			>
 				<template slot-scope="scope">
 					<div class="btns">
 						<el-button size="mini" @click="handleEdit(scope.$index, scope.row)">{{$t("element.indexBtn")}}</el-button>
 						<el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">{{$t("element.deleteBtn")}}</el-button>
+						<el-button size="mini" type="success" @click="handleAdd(scope.$index, scope.row)">{{$t("element.addBtn")}}</el-button>
 					</div>
 				</template>
 			</el-table-column>
@@ -79,14 +80,24 @@
 				console.log(index,row);
 			},
 			handleDelete(index,row) {
-				alert(index);
-				console.log(index,row);
+				// console.log(this.$parent.dataSource);
+				this.$parent.dataSource.splice(index,1);
+				// this.$parent.getMockData1();  // 刷新表格数据，此处为mock数据，调用的效果就是删除后重新加载表格数据生成8条
+				// console.log(this.$parent.dataSource);
 			},
 			handleSelectionChange(val) {
 				// val是选中项的集合，累计的过程
 				console.log(val);
 				this.multipleSelection = val;
 				console.log(this.multipleSelection);
+			},
+			handleAdd(index) {
+				let newValue = {
+					username: "张三",
+					createTime: "2000-00-00",
+					deptName: "普林斯顿"
+				}
+				this.$parent.dataSource.push(newValue);
 			}
 		}
 	}
