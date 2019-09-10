@@ -45,9 +45,13 @@
 							<el-menu-item index="7-1" @click="goto('/VuexTest')">Vuex步骤</el-menu-item>
 						</el-menu-item-group>
 					</el-submenu>
-					<el-menu-item index="2" @click="goto('/Slots')">
+					<el-menu-item index="9" @click="goto('/Slots')">
 						<i class="el-icon-menu"></i>
 						<span slot="title">{{$t("menus.slotTest")}}</span>
+					</el-menu-item>
+					<el-menu-item index="8-1" @click="goto('/WatchTest')">
+						<i class="el-icon-menu"></i>
+						<span slot="title">WatchTest</span>
 					</el-menu-item>
 				</el-menu>
 			</div>

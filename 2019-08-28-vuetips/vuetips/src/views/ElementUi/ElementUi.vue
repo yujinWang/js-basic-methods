@@ -10,7 +10,6 @@
 		<Tables
 			:dataSource="dataSource"
 			:columns="columnsData"
-			ref="table"
 		>
 		</Tables>
 	</div>
