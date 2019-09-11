@@ -50,8 +50,12 @@
 						<span slot="title">{{$t("menus.slotTest")}}</span>
 					</el-menu-item>
 					<el-menu-item index="8-1" @click="goto('/WatchTest')">
+						<i class="el-icon-edit"></i>
+						<span slot="title">{{$t("element.watchTest")}}</span>
+					</el-menu-item>
+					<el-menu-item index="9-1" @click="goto('/LifeCycle')">
 						<i class="el-icon-menu"></i>
-						<span slot="title">WatchTest</span>
+						<span slot="title">{{$t("element.lifeCycle")}}</span>
 					</el-menu-item>
 				</el-menu>
 			</div>

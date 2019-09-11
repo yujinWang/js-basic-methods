@@ -23,6 +23,7 @@ const Notes3 = () => import("../views/Note/Note3.vue");
 const SlotTest = () => import("../views/Slot/SlotTest.vue");
 const VuexTest = () => import("../views/Note/Note4.vue");
 const WatchTest = () => import("../views/WatchTest/WatchTest.vue");
+const LifeCycle = () => import("../views/LifeCycle/LifeCycle.vue");
 
 // 导出router对象
 export default new VueRouter({
@@ -69,6 +70,10 @@ export default new VueRouter({
 				{
 					path: "/WatchTest",
 					component: WatchTest
+				},
+				{
+					path: "/LifeCycle",
+					component: LifeCycle
 				}
 			]
 		}

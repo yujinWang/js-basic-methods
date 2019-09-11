@@ -22,6 +22,8 @@ module.exports = {
 		operator: "Operator",
 		indexBtn: "IndexBtn",
 		deleteBtn: "Delete",
-		addBtn: "Add"
+		addBtn: "Add",
+		watchTest: "WatchTest",
+		lifeCycle: "LifeCycle"
 	}
 }

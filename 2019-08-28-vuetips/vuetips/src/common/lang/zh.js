@@ -22,6 +22,8 @@ module.exports = {
 		operator: "操作",
 		indexBtn: "索引",
 		deleteBtn: "删除",
-		addBtn: "增加"
+		addBtn: "增加",
+		watchTest: "watch测试",
+		lifeCycle: "生命周期"
 	}
 }
