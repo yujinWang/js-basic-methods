@@ -24,6 +24,7 @@ module.exports = {
 		deleteBtn: "Delete",
 		addBtn: "Add",
 		watchTest: "WatchTest",
-		lifeCycle: "LifeCycle"
+		lifeCycle: "LifeCycle",
+		tableExport: "TableExport"
 	}
 }

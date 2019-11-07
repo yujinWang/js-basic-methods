@@ -24,6 +24,7 @@ module.exports = {
 		deleteBtn: "删除",
 		addBtn: "增加",
 		watchTest: "watch测试",
-		lifeCycle: "生命周期"
+		lifeCycle: "生命周期",
+		tableExport: "表格导出"
 	}
 }

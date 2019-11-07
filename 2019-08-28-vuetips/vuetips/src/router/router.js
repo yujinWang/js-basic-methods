@@ -24,6 +24,8 @@ const SlotTest = () => import("../views/Slot/SlotTest.vue");
 const VuexTest = () => import("../views/Note/Note4.vue");
 const WatchTest = () => import("../views/WatchTest/WatchTest.vue");
 const LifeCycle = () => import("../views/LifeCycle/LifeCycle.vue");
+const TableExport = () => import("../views/TableExport/TableExport.vue");
+const CsvTableExport = () => import("../views/TableExport/CsvTableExport.vue");
 
 // 导出router对象
 export default new VueRouter({
@@ -74,6 +76,14 @@ export default new VueRouter({
 				{
 					path: "/LifeCycle",
 					component: LifeCycle
+				},
+				{
+					path: "/TableExport",
+					component: TableExport
+				},
+				{
+					path: "/CsvTableExport",
+					component: CsvTableExport
 				}
 			]
 		}

@@ -44,6 +44,12 @@
 						<el-menu-item-group>
 							<el-menu-item index="7-1" @click="goto('/VuexTest')">Vuex步骤</el-menu-item>
 						</el-menu-item-group>
+						<el-menu-item-group>
+							<el-menu-item index="8-1" @click="goto('/TableExport')">table导出</el-menu-item>
+						</el-menu-item-group>
+						<el-menu-item-group>
+							<el-menu-item index="9-1" @click="goto('/CsvTableExport')">csvtable导出</el-menu-item>
+						</el-menu-item-group>
 					</el-submenu>
 					<el-menu-item index="9" @click="goto('/Slots')">
 						<i class="el-icon-menu"></i>

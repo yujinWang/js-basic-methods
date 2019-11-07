@@ -23,31 +23,6 @@
 		name: 'ElementUi',
 		data() {
 			return {
-				// dataSource: [{
-				// 	createTime: "2018-08-08",
-				// 	phone: "123456",
-				// 	username: "Jhon",
-				// 	deptName: "部门1",
-				// 	status: "在职"
-				// }, {
-				// 		createTime: "2019-08-08",
-				// 		phone: "12345678",
-				// 		username: "Jimi",
-				// 		deptName: "部门2",
-				// 		status: "离职"
-				// 	}, {
-				// 		createTime: "2020-08-08",
-				// 		phone: "345678",
-				// 		username: "Tom",
-				// 		deptName: "部门3",
-				// 		status: "离职"
-				// 	}, {
-				// 		createTime: "2021-08-08",
-				// 		phone: "456789",
-				// 		username: "Jike",
-				// 		deptName: "部门4",
-				// 		status: "在职"
-				// 	}],
 				dataSource: []
 			}
 		},
@@ -56,7 +31,10 @@
 		},
 		mounted() {
 			this.getMockData();
-			this.getMockData1(); 
+			this.getMockData1();
+			console.log("this",this);
+			console.log("this.$route",this.$route);
+			console.log("this.$router",this.$router);
 		},
 		computed: {
 			tableHead() {
@@ -107,10 +85,10 @@
 		},
 		methods: {
 			handleEdit(index,row) {
-				console.log(arguments);
+				console.log(index, row);
 			},
 			handleDelete(index,row) {
-				console.log(arguments);
+				console.log(index, row);
 			},
 			getMockData() {
 				console.log("以下为数据")
