@@ -1,0 +1,5 @@
+1、aaa.html位于www.aaa.com域中
+2、bbb.html位于www.bbb.com域中
+3、在aaa.html中的window.name中携带信息
+4、然后点击aaa.html文件可看到name信息设置成功，然后跳转到www.bbb.com并在弹窗中
+   可看到携带的信息被带到了www.bbb.com域
