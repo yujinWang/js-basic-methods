@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="t"></div>
+	<input type="text" value="" id="text" />
+	<input type="button" id="s" value="write" onclick="test()">
+	<script>
+		// 在button的onclick事件中，执行了test()函数，将html代码写入了dom节点，最后导致了xss的发生
+		function test() {
+			var str = document.getElementById("text").value;
+			document.getElementById("t").innerHTML = "<a href = '"+str+"'>testLink</a>"
+		}
+	</script>
+</body>
+</html>
