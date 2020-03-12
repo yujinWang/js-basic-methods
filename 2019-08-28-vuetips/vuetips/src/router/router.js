@@ -26,66 +26,71 @@ const WatchTest = () => import("../views/WatchTest/WatchTest.vue");
 const LifeCycle = () => import("../views/LifeCycle/LifeCycle.vue");
 const TableExport = () => import("../views/TableExport/TableExport.vue");
 const CsvTableExport = () => import("../views/TableExport/CsvTableExport.vue");
+const Login = () => import("../views/Login/Login.vue");
 
 // 导出router对象
 export default new VueRouter({
-	routes: [{
-		path: "/",
-		redirect: "/Portal"
-		},
-		{
-			path: "/Portal",
-			component: Portal,
-			children: [
-				{
-					path: "/DataChange",
-					component: DataChange
-				},
-				{
-					path: "/Vuexs",
-					component: Vuexs
-				},
-				{
-					path: "/ElementUi",
-					component: ElementUi
-				},
-				{
-					path: "/Notes1",
-					component: Notes1
-				},
-				{
-					path: "/Notes2",
-					component: Notes2
-				},
-				{
-					path: "/Notes3",
-					component: Notes3
-				},
-				{
-					path: "/Slots",
-					component: SlotTest
-				},
-				{
-					path: "/VuexTest",
-					component: VuexTest
-				},
-				{
-					path: "/WatchTest",
-					component: WatchTest
-				},
-				{
-					path: "/LifeCycle",
-					component: LifeCycle
-				},
-				{
-					path: "/TableExport",
-					component: TableExport
-				},
-				{
-					path: "/CsvTableExport",
-					component: CsvTableExport
-				}
-			]
-		}
-	]
+  routes: [{
+    path: "/",
+    redirect: "/Login"
+  },
+  {
+    path: "/Login",
+    component: Login
+  },
+  {
+    path: "/Portal",
+    component: Portal,
+    children: [
+      {
+        path: "/DataChange",
+        component: DataChange
+      },
+      {
+        path: "/Vuexs",
+        component: Vuexs
+      },
+      {
+        path: "/ElementUi",
+        component: ElementUi
+      },
+      {
+        path: "/Notes1",
+        component: Notes1
+      },
+      {
+        path: "/Notes2",
+        component: Notes2
+      },
+      {
+        path: "/Notes3",
+        component: Notes3
+      },
+      {
+        path: "/Slots",
+        component: SlotTest
+      },
+      {
+        path: "/VuexTest",
+        component: VuexTest
+      },
+      {
+        path: "/WatchTest",
+        component: WatchTest
+      },
+      {
+        path: "/LifeCycle",
+        component: LifeCycle
+      },
+      {
+        path: "/TableExport",
+        component: TableExport
+      },
+      {
+        path: "/CsvTableExport",
+        component: CsvTableExport
+      }
+    ]
+  }
+  ]
 });
