@@ -24,9 +24,9 @@ axios.interceptors.request.use((config) => {
 axios.interceptors.response.use((res) => {
   //对响应数据做些事-约束条件根据具体情况添加
   // if (!res.data.success) {
-  if (!res.data.success || res.status === 200) {
-    return Promise.resolve(res);
-  }
+  // if (!res.data.success || res.status === 200) {
+  return Promise.resolve(res);
+  // }
   return res;
 }, (error) => {
   console.log('网络异常')

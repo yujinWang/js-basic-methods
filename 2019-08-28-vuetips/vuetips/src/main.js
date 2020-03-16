@@ -29,7 +29,6 @@ Vue.prototype.$http = axios;  //引入完成之后不可直接使用，需要改
 require("./mock/mock.js");
 // import "./mock/mock";
 
-
 // window.Vue = Vue;
 Vue.use(ElementUi);
 Vue.use(VueI18n);

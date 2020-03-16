@@ -20,11 +20,11 @@
           type="password"
           v-model="ruleForm.checkPass"
           autocomplete="off"
-          @keyup.enter.native="submitForm('ruleForm')"
+          @keyup.enter.native="submitForm2('ruleForm')"
         ></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+        <el-button type="primary" @click="submitForm2('ruleForm')">登录</el-button>
         <el-button @click="resetForm('ruleForm')">重置</el-button>
       </el-form-item>
     </el-form>
@@ -33,6 +33,8 @@
 
 <script>
 import https from "../../http/https";
+import { mapActions } from "vuex";
+import aaa from "../../store/modules/user";
 export default {
   data() {
     var validatePass = (rule, value, callback) => {
@@ -67,18 +69,17 @@ export default {
     };
   },
   methods: {
-    submitForm(formName) {
+    submitForm2(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          console.log(this.ruleForm);
-          let params = {
-            email: this.ruleForm.userName,
-            password: this.ruleForm.pass
-          };
-          https.fetchPost("/login/loginbyemail", params).then(res => {
-            console.log(res);
-          });
-          alert("submit!");
+          this.$store
+            .dispatch("submitForm", this.ruleForm)
+            .then(() => {
+              this.$router.push({ path: "/ElementUi" });
+            })
+            .catch(err => {
+              alert("登录失败！");
+            });
         } else {
           console.log("error submit!!");
           return false;

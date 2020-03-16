@@ -28,9 +28,6 @@ export default {
   mounted() {
     this.getMockData();
     this.getMockData1();
-    console.log("this", this);
-    console.log("this.$route", this.$route);
-    console.log("this.$router", this.$router);
   },
   computed: {
     tableHead() {
@@ -89,14 +86,12 @@ export default {
       console.log(index, row);
     },
     getMockData() {
-      console.log("以下为数据");
       this.$http.get("/user").then(res => {
         console.log(res);
       });
     },
     getMockData1() {
       https.fetchGet("/user").then(res => {
-        console.log(res); //dataSource
         this.dataSource = getDataTest(res.data.data);
       });
     }
