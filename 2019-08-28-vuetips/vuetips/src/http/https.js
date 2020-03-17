@@ -27,7 +27,7 @@ axios.interceptors.response.use((res) => {
   // if (!res.data.success || res.status === 200) {
   return Promise.resolve(res);
   // }
-  return res;
+  // return res;
 }, (error) => {
   console.log('网络异常')
   return Promise.reject(error);
@@ -54,8 +54,6 @@ export function fetchGet(url, param) {
     axios.get(url, { params: param })
       .then(response => {
         resolve(response)
-      }, err => {
-        reject(err)
       })
       .catch((error) => {
         reject(error)

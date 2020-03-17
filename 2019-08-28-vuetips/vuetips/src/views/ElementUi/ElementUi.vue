@@ -87,7 +87,7 @@ export default {
     },
     getMockData() {
       this.$http.get("/user").then(res => {
-        console.log(res);
+        // console.log(res);
       });
     },
     getMockData1() {

@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 
 const TokenKey = "user_token";
 // 方便测试，初始给定默认值
-Cookies.set(TokenKey, "token-123");
+// Cookies.set(TokenKey, "token-123");
 
 export function getToken() {
   return Cookies.get(TokenKey);

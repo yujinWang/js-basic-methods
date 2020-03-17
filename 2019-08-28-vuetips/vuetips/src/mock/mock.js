@@ -22,3 +22,70 @@ const simulateData = function () {
 }
 
 Mock.mock('/user', 'get', simulateData);
+
+// 登录信息
+const tokens = {
+  admin: {
+    token: "admin-token"
+  },
+  editor: {
+    token: "editor-token"
+  }
+}
+
+// const loginData = function () {
+//   return {
+//     response: config => {
+//       const { username } = config.body
+//       const token = tokens[username]
+//       console.log(config)
+//       if (!token) {
+//         return {
+//           code: 66666,
+//           message: "无权限"
+//         }
+//       }
+//       return {
+//         code: 20000,
+//         data: token
+//       }
+//     }
+//   }
+// }
+// console.log("loginData", loginData());
+
+// Mock.mock('/user/login222', 'post', loginData);
+// http://mockjs.com/examples.html mock官网
+console.log(Mock.mock({
+  "string|1-10": "★"
+}))
+
+function test() {
+  return {
+    res: config => {
+      return "mock-test"
+    }
+  }
+}
+let aaa = test();
+console.log(aaa.res());
+
+Mock.mock('/user/login222', 'post', function () {
+  console.log(123);
+  return {
+    response: config => {
+      const { username } = config.body
+      const token = tokens[username]
+      if (!token) {
+        return {
+          code: 66666,
+          message: "无权限"
+        }
+      }
+      return {
+        code: 20000,
+        data: token
+      }
+    }
+  }
+});
