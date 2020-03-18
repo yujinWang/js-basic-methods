@@ -55,6 +55,7 @@ export default {
           this.$store
             .dispatch("submitForm", this.ruleForm)
             .then(() => {
+              console.log(this.$store.state);
               this.$router.push({ path: "/ElementUi" });
             })
             .catch(err => {

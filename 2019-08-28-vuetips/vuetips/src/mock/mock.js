@@ -49,7 +49,7 @@ function test() {
 let aaa = test();
 console.log(aaa.res());
 
-Mock.mock('/user/login222', 'post', function (config) {
+Mock.mock('/user/login', 'post', function (config) {
   const username = config.body.split("&")[0].split("=")[1];
   const token = tokens[username];
   if (!token) {
