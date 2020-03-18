@@ -15,24 +15,22 @@ const mutations = {
 const actions = {
   // user login
   submitForm({ commit }, userInfo) {
-    console.log("user/submitForm")
+    console.log("user/submitForm", userInfo)
     // 此处继续，需发送请求获取真实token值,对象解构赋值，需和登录框定义属性名一致
     const { username, password } = userInfo
-    // return new Promise((resolve, reject) => {
-    // 无mock情况下临时数据
-    // const data = {
-    //   token: "admin"
-    // }
-    login({ username: username.trim(), password: password }).then(res => {
-      console.log(res);
-      // const { data } = res;
-      // Cookies.set("user_token", data.token);
-      // commit("SET_TOKEN", data.token);
-      // resolve();
+    return new Promise((resolve, reject) => {
+      console.log(username, password)
+      login({ username: username.trim(), password: password }).then(res => {
+        console.log(res);
+        const { data } = res.data;
+        console.log(data);
+        Cookies.set("user_token", data.token);
+        // commit("SET_TOKEN", data.token);
+        resolve();
+      })
+    }).catch(error => {
+      reject(error);
     })
-    // }).catch(error => {
-    //   reject(error);
-    // })
   },
   test() {
     return 123

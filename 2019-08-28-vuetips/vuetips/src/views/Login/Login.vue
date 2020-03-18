@@ -41,8 +41,7 @@ export default {
     return {
       ruleForm: {
         username: "",
-        password: "",
-        checkpwd: ""
+        password: ""
       },
       rules: {
         pass: [{ validator: validatePass, trigger: "blur" }]

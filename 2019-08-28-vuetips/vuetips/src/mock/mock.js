@@ -33,27 +33,6 @@ const tokens = {
   }
 }
 
-// const loginData = function () {
-//   return {
-//     response: config => {
-//       const { username } = config.body
-//       const token = tokens[username]
-//       console.log(config)
-//       if (!token) {
-//         return {
-//           code: 66666,
-//           message: "无权限"
-//         }
-//       }
-//       return {
-//         code: 20000,
-//         data: token
-//       }
-//     }
-//   }
-// }
-// console.log("loginData", loginData());
-
 // Mock.mock('/user/login222', 'post', loginData);
 // http://mockjs.com/examples.html mock官网
 console.log(Mock.mock({
@@ -70,22 +49,17 @@ function test() {
 let aaa = test();
 console.log(aaa.res());
 
-Mock.mock('/user/login222', 'post', function () {
-  console.log(123);
-  return {
-    response: config => {
-      const { username } = config.body
-      const token = tokens[username]
-      if (!token) {
-        return {
-          code: 66666,
-          message: "无权限"
-        }
-      }
-      return {
-        code: 20000,
-        data: token
-      }
+Mock.mock('/user/login222', 'post', function (config) {
+  const username = config.body.split("&")[0].split("=")[1];
+  const token = tokens[username];
+  if (!token) {
+    return {
+      code: 66666,
+      message: "无权限"
     }
+  }
+  return {
+    code: 20000,
+    data: token
   }
 });
