@@ -63,3 +63,18 @@ Mock.mock('/user/login', 'post', function (config) {
     data: token
   }
 });
+
+// Mock.mock('/user/info', 'get', function (config) {
+//   const username = config.body.split("&")[0].split("=")[1];
+//   const token = tokens[username];
+//   if (!token) {
+//     return {
+//       code: 66666,
+//       message: "无权限"
+//     }
+//   }
+//   return {
+//     code: 20000,
+//     data: token
+//   }
+// });
