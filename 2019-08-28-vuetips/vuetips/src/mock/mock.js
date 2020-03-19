@@ -21,7 +21,7 @@ const simulateData = function () {
   }
 }
 
-Mock.mock('/user', 'get', simulateData);
+Mock.mock('/user', simulateData);
 
 // 登录信息
 const tokens = {
@@ -35,23 +35,14 @@ const tokens = {
 
 // Mock.mock('/user/login222', 'post', loginData);
 // http://mockjs.com/examples.html mock官网
-console.log(Mock.mock({
-  "string|1-10": "★"
-}))
+// console.log(Mock.mock({
+//   "string|1-10": "★"
+// }))
 
-function test() {
-  return {
-    res: config => {
-      return "mock-test"
-    }
-  }
-}
-let aaa = test();
-console.log(aaa.res());
-
-Mock.mock('/user/login', 'post', function (config) {
-  const username = config.body.split("&")[0].split("=")[1];
+Mock.mock('/user/login', function (config) {
+  const username = JSON.parse(config.body).username;
   const token = tokens[username];
+  // 之前未返回data值导致在store/modules/user中调用此接口无返回数据 WTF
   if (!token) {
     return {
       code: 66666,
@@ -64,17 +55,19 @@ Mock.mock('/user/login', 'post', function (config) {
   }
 });
 
-// Mock.mock('/user/info', 'get', function (config) {
-//   const username = config.body.split("&")[0].split("=")[1];
-//   const token = tokens[username];
-//   if (!token) {
-//     return {
-//       code: 66666,
-//       message: "无权限"
-//     }
-//   }
-//   return {
-//     code: 20000,
-//     data: token
-//   }
-// });
+Mock.mock('/user/info', function (config) {
+  console.log(config);
+  // return "hello world";
+  // const username = config.body.split("&")[0].split("=")[1];
+  // const token = tokens[username];
+  // if (!token) {
+  //   return {
+  //     code: 66666,
+  //     message: "无权限"
+  //   }
+  // }
+  // return {
+  //   code: 20000,
+  //   data: token
+  // }
+});

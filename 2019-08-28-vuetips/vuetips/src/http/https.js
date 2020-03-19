@@ -1,16 +1,15 @@
 import axios from 'axios'
 import qs from 'qs'
+import store from "@/store/modules/user"
+import { getToken } from "@/utils/auth"
 
-//响应时间
-axios.defaults.timeout = 5000;
-//配置请求头
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
-//配置接口地址
-axios.defaults.baseURL = '';
+const service = axios.create({
+  baseURL: "",
+  timeout: 7000
+})
 
 //POST传参序列化(添加请求拦截器)
-axios.interceptors.request.use((config) => {
-  //在发送请求之前做某件事
+service.interceptors.request.use((config) => {
   if (config.method === 'post') {
     config.data = qs.stringify(config.data);
   }
@@ -21,47 +20,15 @@ axios.interceptors.request.use((config) => {
 });
 
 //返回状态判断(添加响应拦截器)
-axios.interceptors.response.use((res) => {
-  //对响应数据做些事-约束条件根据具体情况添加
-  // if (!res.data.success) {
-  // if (!res.data.success || res.status === 200) {
-  return Promise.resolve(res);
+service.interceptors.response.use((response) => {
+  const res = response.data;
+  // if (res.code !== 20000) {
+  //   alert("数据错误！");
   // }
-  // return res;
+  return Promise.resolve(res);
 }, (error) => {
   console.log('网络异常')
   return Promise.reject(error);
 });
 
-//返回一个Promise(发送post请求)
-export function fetchPost(url, params) {
-  return new Promise((resolve, reject) => {
-    axios.post(url, params)
-      .then(response => {
-        resolve(response);
-      }, err => {
-        reject(err);
-      })
-      .catch((error) => {
-        reject(error)
-      })
-  })
-}
-
-//返回一个Promise(发送get请求)
-export function fetchGet(url, param) {
-  return new Promise((resolve, reject) => {
-    axios.get(url, { params: param })
-      .then(response => {
-        resolve(response)
-      })
-      .catch((error) => {
-        reject(error)
-      })
-  })
-}
-
-export default {
-  fetchPost,
-  fetchGet,
-}
+export default service;

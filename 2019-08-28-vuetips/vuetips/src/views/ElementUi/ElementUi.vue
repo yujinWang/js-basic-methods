@@ -13,7 +13,7 @@
 
 <script>
 import Tables from "../../common/table/Table";
-import https from "../../http/https";
+import request from "../../http/https";
 import { getDataTest } from "../../API/api";
 export default {
   name: "ElementUi",
@@ -86,13 +86,13 @@ export default {
       console.log(index, row);
     },
     getMockData() {
-      this.$http.get("/user").then(res => {
-        // console.log(res);
-      });
+      // request({ url: "/user", type: "get" }).then(res => {
+      // console.log(res);
+      // });
     },
     getMockData1() {
-      https.fetchGet("/user").then(res => {
-        this.dataSource = getDataTest(res.data.data);
+      request({ url: "/user" }).then(res => {
+        this.dataSource = getDataTest(res.data);
       });
     }
   }

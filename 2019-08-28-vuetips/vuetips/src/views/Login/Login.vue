@@ -24,7 +24,7 @@
 
 <script>
 import https from "../../http/https";
-import { mapActions } from "vuex";
+// import { mapActions } from "vuex";
 import aaa from "../../store/modules/user";
 export default {
   data() {
@@ -54,8 +54,8 @@ export default {
         if (valid) {
           this.$store
             .dispatch("submitForm", this.ruleForm)
+            // .dispatch("getInfo", this.ruleForm)
             .then(() => {
-              console.log(this.$store.state);
               this.$router.push({ path: "/ElementUi" });
             })
             .catch(err => {
