@@ -29,18 +29,19 @@ Vue.prototype.$http = axios;  //引入完成之后不可直接使用，需要改
 require("./mock/mock.js");
 // import "./mock/mock";
 
-
 // window.Vue = Vue;
 Vue.use(ElementUi);
 Vue.use(VueI18n);
 
+import './permission' // permission control
+
 const i18n = new VueI18n({
-	// locale: LangStorage.getLang('zh'),  // 语言标识，后面会用做切换和将用户习惯存储到本地浏览器
-	locale: 'zh', // 语言标识
-	messages: {
-		'zh': require('./common/lang/zh'),
-		'en': require('./common/lang/en')
-	}
+  // locale: LangStorage.getLang('zh'),  // 语言标识，后面会用做切换和将用户习惯存储到本地浏览器
+  locale: 'zh', // 语言标识
+  messages: {
+    'zh': require('./common/lang/zh'),
+    'en': require('./common/lang/en')
+  }
 })
 
 Vue.config.productionTip = false
@@ -49,8 +50,8 @@ Vue.config.productionTip = false
 // 但是这里引入的是Router，那么展开就是Router:Router，显然前面的键值是有问题的
 // 报的错误是Error in render: "TypeError: Cannot read property 'matched' of undefined"
 new Vue({
-	router:Router,
-	render: h => h(App),
-	i18n,
-	store
+  router: Router,
+  render: h => h(App),
+  i18n,
+  store
 }).$mount('#app')
